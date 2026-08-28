@@ -2,20 +2,14 @@
   "name": "sooq-marketplace",
   "version": "1.0.0",
   "description": "منصة مجتمعية تجمع بين المتجر الإلكتروني وغرف المحادثة الفورية - SOOQ Marketplace",
-  "main": "index.html",
+  "private": true,
   "scripts": {
-    "dev": "python -m http.server 3000",
-    "start": "python -m http.server 8000",
-    "build": "echo 'Build process'"
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 8000",
+    "build": "test -f index.html && test -f styles/main.css && test -f styles/rtl.css && test -f js/main.js && test -f js/chat.js && echo 'Static build validation passed.'",
+    "lint": "node --check js/main.js && node --check js/chat.js"
   },
-  "keywords": [
-    "marketplace",
-    "social-commerce",
-    "chat",
-    "ecommerce",
-    "arabic",
-    "سوق"
-  ],
+  "keywords": ["marketplace", "social-commerce", "chat", "ecommerce", "arabic", "سوق"],
   "author": "elazzouz-dotcom",
   "license": "MIT"
 }
